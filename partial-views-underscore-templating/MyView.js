@@ -17,7 +17,7 @@ var MyView = BaseView.extend({
       //This should work with just this.el.innerHTML = viewContent,
       //but for whatever reason it wasn't working, so I used
       //some messy jQuery to ensure the example works.
-      $("#"+this.el.id).html(viewContent);
+      $(this.el).html(viewContent);
     }
 });
 

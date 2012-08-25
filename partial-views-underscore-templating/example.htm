@@ -30,7 +30,7 @@
             if (testName){
                 new MyView({
                   model: new Person({name: testName}),
-                  id: "demoResults"
+                  el: $("#demoResults")
                 }).render();
             }
         });
