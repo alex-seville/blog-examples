@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example Form - Partial Views with Underscore Templating</title>
+        <!-- normally you load scripts at the bottom, but for the purpose of this example we'll load them here -->
+        <!-- jquery, underscore, and backbone -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js"></script>
+        <script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
+        <!-- the specific files for this app -->
+        <script src="./app.js"></script>
+        <script src="./BaseView.js"></script>
+        <script src="./MyView.js"></script>
+    </head>
+    <body>
+        <h1>Partial View Example</h1>
+        <p>We're going to load our input_template.htm as a partial template.  You should see the name inside a red input field.</p>
+        <button id="launchExample" >Try Example</button>
+        <div id="demoResults" ></div>
+
+
+
+        <script type="text/javascript">
+        //we just do the binding of the example button here
+        $("#launchExample").click(function(){
+            var testName = prompt("Enter a name for the example","bob");
+            if (testName){
+                new MyView({
+                  model: new Person({name: testName}),
+                  id: "demoResults"
+                }).render();
+            }
+        });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+<!-- underscore prefers that you store object params to a var first -->
+<!-- here we're passing the 'name' from the model of the view, and hardcoded 'red' -->
+<% var partialParams = { inputName: name, inputColor: "red" }; %>
+
+<!-- you can have other html here -->
+
+Please confirm your name: <%= partial('input_template.htm',partialParams ) %>
