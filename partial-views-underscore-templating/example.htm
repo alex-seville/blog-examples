@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Example Form - Partial Views with Underscore Templating</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
         <!-- normally you load scripts at the bottom, but for the purpose of this example we'll load them here -->
         <!-- jquery, underscore, and backbone -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
@@ -13,11 +14,13 @@
         <script src="./MyView.js"></script>
     </head>
     <body>
+         <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>Partial View Example</h1>
         <p>We're going to load our input_template.htm as a partial template.  You should see the name inside a red input field.</p>
         <button id="launchExample" >Try Example</button>
         <div id="demoResults" ></div>
-
+</section></div>
 
 
         <script type="text/javascript">
