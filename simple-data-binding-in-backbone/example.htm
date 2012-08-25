@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example Form - Simple Backbone Data Binding</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+        <!-- normally you load scripts at the bottom, but for the purpose of this example we'll load them here -->
+        <!-- jquery, underscore, and backbone -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js"></script>
+        <script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
+        <!-- the specific files for this app -->
+        <script src="./simpleDataBind.js"></script>
+        <script src="./app.js"></script>
+        <script src="./BaseView.js"></script>
+        <script src="./MyView.js"></script>
+        <style>
+            a {
+            cursor: pointer!important;
+        }
+            </style>
+    </head>
+    <body>
+         <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Simplest Backbone Data Binding Example</h1>
+        <p>We use simple data binding to bind our Backbone model to an input field.  Click 'Edit', type into the input field, and hit 'Save' to see the model changed.<br><br>View the <a href="http://blog.alexanderseville.com/post/26901510507/simple-data-binding-in-backbone-part-1-of-2">blog post</a> or the <a href="https://github.com/alex-seville/blog-examples/tree/master/simple-data-binding-in-backbone">source</a>.</p>
+        <div id="demoResults" ></div>
+</section></div>
+
+
+        <script type="text/javascript">
+            new MyView({
+              model: new Person({Name: "bob",Editable:false}),
+              el: $("#demoResults"),
+            }).render();
+        </script>
+    </body>
+</html>

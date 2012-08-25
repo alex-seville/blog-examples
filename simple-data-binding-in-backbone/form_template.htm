@@ -1,0 +1,13 @@
+<!-- the data-for attribute matches our Backbone model -->
+ <h3>Example Form</h3>
+ <span>Name: </span>
+ <span><%if (Editable){ %>
+    <input data-for="Name" type="text" value="<%=Name %>"/>
+ <%}else{ %><%=Name %><%} %>
+ </span>
+ <br>
+ <%if (Editable){ %>
+    <a  class="save">Save</a>
+    <a  class="cancel">Cancel</a>
+ <%}else{ %>
+ <a class="editLink">Edit</a><%} %>
