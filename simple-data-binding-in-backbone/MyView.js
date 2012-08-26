@@ -1,4 +1,4 @@
-var MyView = BaseView.extend({
+var MyView = Backbone.View.extend({
     //we reference our main template
     template: "form_template.htm",
     //Just a render function for the example
