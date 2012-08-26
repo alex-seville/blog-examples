@@ -17,11 +17,12 @@ var MyView = BaseView.extend({
     events: {
        'click .editLink': 'edit',
        'click .save': 'save',
-       'click .cancel': 'cancel'
+       'click .cancel': 'cancel',
+       'click .changeModel': 'changeModel'
     },
     save: function(event){
       event.preventDefault();
-      var newModel = simpleDataBind(this.el);
+      var newModel = simpleDataGet(this.el);
       //we could save the model to the server,
       //with this new info, but we'll just do
       //a local update
@@ -35,6 +36,17 @@ var MyView = BaseView.extend({
     cancel: function (event) {
         event.preventDefault();
         this.render(false);
+    },
+    changeModel: function(event){
+      event.preventDefault();
+      var newName = prompt("Enter a new name property for the model");
+      if (newName){
+        this.model.set({Name:newName});
+        simpleDataUpdate(this.model.toJSON(),function(elem,newValue){
+          elem.html(newValue);
+        });
+        //we don't need to rerender because it's binded
+      }
     }
 });
 

@@ -3,11 +3,12 @@
  <span>Name: </span>
  <span><%if (Editable){ %>
     <input data-for="Name" type="text" value="<%=Name %>"/>
- <%}else{ %><%=Name %><%} %>
+ <%}else{ %><span data-to="Name"><%=Name %></span><%} %>
  </span>
  <br>
  <%if (Editable){ %>
     <a  class="save">Save</a>
-    <a  class="cancel">Cancel</a>
+    | <a  class="cancel">Cancel</a>
  <%}else{ %>
  <a class="editLink">Edit</a><%} %>
+ | <a class="changeModel">Change Name</a>
