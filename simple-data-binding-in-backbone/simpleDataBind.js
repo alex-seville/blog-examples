@@ -1,7 +1,14 @@
 //Simple data bind
-//call simpleDataBind(element) to get the updated state of the object
+//call simpleDataGet(element) to get the updated state of the object
 
 (function(){
+  /**
+   * @simpleDataGet
+   * @public
+   *
+   * @param {DOM element|jQuery element} elem - parent element containing binded elements
+   * @param {function} getFcn - optional function to provide the value of the bind (default is .val())
+   */
   this.simpleDataGet = function(elem,getFcn){
       var saveObj = {};
       //We loop through all the elements that have a data-for
@@ -43,6 +50,16 @@
       //return the data
       return saveObj;
   };
+
+  /**
+   * @simpleDataUpdate
+   * @public
+   *
+   * @param {object} obj - data to be binded
+   * @param {function} updateFcn - optional function to update the element (default .val())
+   * @param {string} prefix - optional string used to prefix field bindings
+   *                          (i.e. person, where data binding is person.name)
+   */
   this.simpleDataUpdate = function(obj,updateFcn,prefix){
     prefix = prefix || "";
     for (var prop in obj) {
